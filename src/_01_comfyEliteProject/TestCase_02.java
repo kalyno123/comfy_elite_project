@@ -44,7 +44,6 @@ public class TestCase_02 {
         // ** And user should be able to see “Instagram” icon and hyperlink reference for it should be “https://www.instagram.com/comfyelite”
         List<WebElement> socialMediaIcons = driver.findElements(By.xpath("//div[@data-aid='SOCIAL_SOCIAL_LINKS']/a"));
         //System.out.println(socialMediaIcons.size()); // 2; THIS IS TO SEE HOW MANY ELEMENTS ARE ON MY LIST
-
         String[] socials = {"facebook", "instagram"};
         String[] socialsLinks = {"https://www.facebook.com/103179127717601", "https://www.instagram.com/comfyelite"};
 
@@ -55,10 +54,12 @@ public class TestCase_02 {
         }
 
         /*
+        // ** And user should be able to see “Facebook” icon and hyperlink reference for it should be “https://www.facebook.com/103179127717601”
         WebElement fbIcon = driver.findElement(By.cssSelector("div[data-aid='SOCIAL_SOCIAL_LINKS']>a")); // ASK AKIN: //svg[@data-ux="IconSocial"]/..
         System.out.println(fbIcon.isDisplayed() && fbIcon.getAttribute("href").equals("https://www.facebook.com/103179127717601") ?
                 "User IS able to see fb icon and hyperlink reference is VALID" : "User is NOT able to see fb icon and hyperlink reference is INVALID");
 
+        // ** And user should be able to see “Instagram” icon and hyperlink reference for it should be “https://www.instagram.com/comfyelite”
         WebElement igIcon = driver.findElement(By.cssSelector("a[aria-label='Instagram Social Link']"));
         System.out.println(igIcon.isDisplayed() && igIcon.getAttribute("href").equals("https://www.instagram.com/comfyelite") ?
                 "User IS able to see ig icon and hyperlink reference is VALID" : "User is NOT able to see ig icon and hyperlink reference is INVALID");

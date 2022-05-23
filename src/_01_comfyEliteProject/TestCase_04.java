@@ -56,17 +56,9 @@ public class TestCase_04 {
         System.out.println(inputEmail.isDisplayed() && emailLabel.getText().equals("Email*") && inputEmail.getAttribute("value").equals("chriskaly.ngo@gmail.com") ?
                 "User IS able to see email input box, the input box label is VALID and it IS typeable" :
                 "User is NOT able to see email input box, the input box label is INVALID and it is NOT typeable");
-
-        // ** And validate "Message" input box
-        WebElement messageTextArea = driver.findElement(By.cssSelector("textarea[role='textbox']"));
-        messageTextArea.sendKeys("I LOVE SELENIUM");
-        System.out.println(messageTextArea.isDisplayed() && messageTextArea.getAttribute("placeholder").equals("Message*") && messageTextArea.getText().equals("I LOVE SELENIUM") ?
-                "User IS able to see message text area, the message label is VALID and it IS typeable" :
-                "User is NOT able to see message text area, the message label is INVALID and it is NOT typeable");
         */
-        // ** NOTE ID'S FOR THE INPUT BOXES ARE DYNAMIC BUT ALWAYS STARTSWITH/CONTAINS "INPUT" **
 
-
+        // ** And validate "First Name" input box, "Last Name" input box, and "Email" input box
         List<WebElement> formInputBoxes = driver.findElements(By.cssSelector("input[id^='input']"));
         List<WebElement> formInputLabels = driver.findElements(By.xpath("//input[starts-with(@id, 'input')]/../label"));
         //System.out.println(formInputBoxes.size()); // 3 --> THIS IS TO CHECK IF THE LOCATOR FOUND 3 ELEMENTS
@@ -82,7 +74,14 @@ public class TestCase_04 {
                     "User is NOT able to see " + inputBox[i] + " input box, the input box label is INVALID and it is NOT typeable");
         }
 
+        // ** And validate "Message" input box
+        WebElement messageTextArea = driver.findElement(By.cssSelector("textarea[role='textbox']"));
+        messageTextArea.sendKeys("I LOVE SELENIUM");
+        System.out.println(messageTextArea.isDisplayed() && messageTextArea.getAttribute("placeholder").equals("Message*") && messageTextArea.getText().equals("I LOVE SELENIUM") ?
+                "User IS able to see message text area, the message label is VALID and it IS typeable" :
+                "User is NOT able to see message text area, the message label is INVALID and it is NOT typeable");
 
+        // ** NOTE ID'S FOR THE INPUT BOXES ARE DYNAMIC BUT ALWAYS STARTSWITH/CONTAINS "INPUT" **
 
         Driver.quitDriver();
 
